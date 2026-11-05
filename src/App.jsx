@@ -11,6 +11,7 @@ import TeamSection from "./components/TeamSection";
 import ContactSection from "./components/ContactSection";
 import Footer from "./components/Footer";
 import FloatingWhatsApp from "./components/FloatingWhatsApp";
+import { Analytics } from "@vercel/analytics/react";
 import { useScrollReveal } from "./hooks/useScrollReveal";
 
 export default function App() {
@@ -33,6 +34,7 @@ export default function App() {
       </main>
       <Footer />
       <FloatingWhatsApp />
+      <Analytics />
     </div>
   );
 }
