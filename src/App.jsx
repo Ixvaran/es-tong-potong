@@ -3,8 +3,8 @@ import Hero from "./components/Hero";
 import ProductSection from "./components/ProductSection";
 import WhyChooseUs from "./components/WhyChooseUs";
 import AboutSection from "./components/AboutSection";
-import PreOrderForm from "./components/PreOrderForm";
 import HowToOrder from "./components/HowToOrder";
+import PreOrderForm from "./components/PreOrderForm";
 import TestimonialsSection from "./components/TestimonialsSection";
 import FaqSection from "./components/FaqSection";
 import TeamSection from "./components/TeamSection";
@@ -24,8 +24,8 @@ export default function App() {
         <ProductSection />
         <WhyChooseUs />
         <AboutSection />
-        <PreOrderForm />
         <HowToOrder />
+        <PreOrderForm />
         <TestimonialsSection />
         <FaqSection />
         <TeamSection />
