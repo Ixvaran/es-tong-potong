@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Plus, Minus, Send, MapPin, Store } from "lucide-react";
+import { Plus, Minus, Send, Store } from "lucide-react";
 import { products, formatPrice } from "../data/products";
 import { businessInfo, formatWhatsAppLink } from "../data/businessInfo";
 
@@ -36,8 +36,7 @@ export default function PreOrderForm() {
             .map((p) => `- ${p.name}: ${form.quantities[p.id]}`)
             .join("\n");
 
-        const pickupLabel =
-            form.pickup === "bazaar" ? "Ambil di Bazaar" : "Ambil di lokasi lain";
+        const pickupLabel = "Ambil di Bazaar";
 
         const totalLabel = hasUnknownPrice
             ? "[TOTAL]"
@@ -163,44 +162,19 @@ Mohon konfirmasi pesanannya. Terima kasih!`;
 
                     {/* Pickup Method */}
                     <div className="mb-6">
-                        <label className="block text-sm font-semibold text-choco mb-3">
+                        <label className="block text-sm font-semibold text-choco mb-2">
                             Metode Pengambilan
                         </label>
-                        <div className="grid sm:grid-cols-2 gap-3">
-                            <label
-                                className={`flex items-center gap-3 p-4 rounded-2xl border cursor-pointer transition-all ${form.pickup === "bazaar"
-                                        ? "border-primary bg-primary-light/40"
-                                        : "border-choco/10 bg-cream hover:bg-primary-light/20"
-                                    }`}
-                            >
-                                <input
-                                    type="radio"
-                                    name="pickup"
-                                    value="bazaar"
-                                    checked={form.pickup === "bazaar"}
-                                    onChange={(e) => setForm({ ...form, pickup: e.target.value })}
-                                    className="sr-only"
-                                />
-                                <Store className="w-5 h-5 text-primary" />
-                                <span className="text-sm font-medium text-choco">Ambil di Bazaar</span>
-                            </label>
-                            <label
-                                className={`flex items-center gap-3 p-4 rounded-2xl border cursor-pointer transition-all ${form.pickup === "other"
-                                        ? "border-primary bg-primary-light/40"
-                                        : "border-choco/10 bg-cream hover:bg-primary-light/20"
-                                    }`}
-                            >
-                                <input
-                                    type="radio"
-                                    name="pickup"
-                                    value="other"
-                                    checked={form.pickup === "other"}
-                                    onChange={(e) => setForm({ ...form, pickup: e.target.value })}
-                                    className="sr-only"
-                                />
-                                <MapPin className="w-5 h-5 text-primary" />
-                                <span className="text-sm font-medium text-choco">Ambil di lokasi lain</span>
-                            </label>
+                        <div className="flex items-center gap-3 p-4 rounded-2xl border border-primary/20 bg-primary-light/40">
+                            <Store className="w-5 h-5 text-primary flex-shrink-0" />
+                            <div>
+                                <span className="text-sm font-semibold text-choco block">
+                                    Ambil di Bazaar
+                                </span>
+                                <span className="text-xs text-ink/60">
+                                    Booth Fakultas Sains dan Matematika (FSM) Undip, Tembalang
+                                </span>
+                            </div>
                         </div>
                     </div>
 
